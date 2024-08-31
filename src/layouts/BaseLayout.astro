@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
+import "../../src/style/css/style.css"
 
 const { pageTitle } = Astro.props;
 ---
@@ -18,7 +19,7 @@ const { pageTitle } = Astro.props;
 
     <main>
 			<div class="">
-				Home
+				{pageTitle}
 			</div>
       <slot />
       <div class="content">
