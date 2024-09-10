@@ -1,0 +1,16 @@
+---
+import "../../src/style/css/style.css"
+const { pageTitle } = Astro.props;
+
+---
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle}</title>
+  <meta property="og:title" content="ページのタイトル">
+
+  <meta property="og:description" content="ページの説明">
+  <meta property="og:image" content="画像URL">
+  <meta name="description" content="ページの説明">
+</head>
