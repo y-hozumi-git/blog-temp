@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const pageTitle = "Blog";
+
+//microCMS呼び出し
+import { getBlogs } from "../../library/microcms";
+const response = await getBlogs({ fields: ["id", "title"] });
+---
+<BaseLayout pageTitle={pageTitle}>
+  <h2>私の素晴らしいブログのサブタイトル</h2>
+  <ul>
+  {
+    response.contents.map((content: any) => (
+      <li>
+        <a href={`/blog/${content.id}/`}>
+          <p>
+            {content.title}
+          </p>
+        </a>
+      </li>
+    ))
+  }
+
+  </ul>
+</BaseLayout>
