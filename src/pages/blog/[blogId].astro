@@ -30,7 +30,7 @@ const { blogId } = Astro.params;
 const blog = await getBlogDetail(blogId as string);
 ---
 <BaseLayout>
-      <main>
+      <main class="main__post">
         <img src={blog.eyecatch.url} alt="" class="blog-eye">
         <h1 class="title">{blog.title}</h1>
         <p>{blog.category.name}</p>
@@ -38,12 +38,3 @@ const blog = await getBlogDetail(blogId as string);
         <div class="post" set:html={blog.content}></div>
       </main>
     </BaseLayout>
-
-
-<style>
-  main {
-    margin: auto;
-    padding: 1em;
-    max-width: 60ch;
-  }
-</style>
